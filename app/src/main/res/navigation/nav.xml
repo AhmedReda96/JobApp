@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.jobapp.ui.start.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_jobsFragment"
+            app:destination="@id/jobsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobsFragment"
+        android:name="com.example.jobapp.ui.jobs.JobsFragment"
+        android:label="fragment_jobs"
+        tools:layout="@layout/fragment_jobs" >
+        <action
+            android:id="@+id/action_jobsFragment_to_jobDescriptionFragment"
+            app:destination="@id/jobDescriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobDescriptionFragment"
+        android:name="com.example.jobapp.ui.jobDetails.JobDescriptionFragment"
+        android:label="fragment_job_description"
+        tools:layout="@layout/fragment_job_description" >
+        <argument
+            android:name="companyImg"
+            app:argType="string" />
+        <argument
+            android:name="jobTitle"
+            app:argType="string" />
+        <argument android:name="jobDescription"
+            app:argType="string" />
+        <argument
+            android:name="jobType"
+            app:argType="string" />
+        <argument
+            android:name="jobUrl"
+            app:argType="string" />
+        <argument
+            android:name="companyUrl"
+            app:argType="string" />
+    </fragment>
+</navigation>
